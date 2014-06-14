@@ -18,3 +18,9 @@ automatically restarts the server on changes.
 ```
 docker run -it --rm --link redis:redis dockerfile/redis bash -c 'redis-cli -h $REDIS_PORT_6379_TCP_ADDR'
 ```
+
+## TODO
+
+ - prepend JSON responses with `for(;;);`
+ - access token timeouts
+ - remember me functionality
