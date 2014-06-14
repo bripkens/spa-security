@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>SPA Security</title>
+  </head>
+  <body>
+    <h1>Sign In</h1>
+
+    <form action="/signin" method="post">
+      <p id="reason" style="color: red;"></p>
+      <div>
+        <label for="user">User</label>
+        <input type="text" name="user" id="user">
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+      </div>
+      <div>
+        <button type="submit">Sign In</button>
+      </div>
+    </form>
+
+    <script>
+      // being lazy right now. It would be much better if the server would do
+      // this...
+      var match = window.location.search.match(/reason=([^&]+)/);
+      if (match) {
+        var reason = decodeURIComponent(match[1]);
+        document.getElementById('reason').textContent = reason;
+      }
+    </script>
+  </body>
+</html>

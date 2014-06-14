@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>We fucked up</title>
+  </head>
+  <body>
+    <h1>We fucked up</h1>
+    <p id="out">
+
+    </p>
+    <script>
+      // being lazy right now. It would be much better if the server would do
+      // this...
+      var match = window.location.search.match(/info=([^&]+)/);
+      if (match) {
+        var info = decodeURIComponent(match[1]);
+        document.getElementById('out').textContent = info;
+      }
+    </script>
+  </body>
+</html>

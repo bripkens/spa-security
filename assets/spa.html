@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>SPA Security</title>
+  </head>
+  <body>
+    <h1>SPA content</h1>
+
+    <p>
+      Hello
+      <span id="name"></span>!
+    </p>
+
+    <a href="/signout">Sign out</a>
+
+    <script>
+      (function() {
+        var req = new XMLHttpRequest();
+        req.responseType = 'json';
+        req.onreadystatechange = function() {
+          if (req.readyState === 4) {
+            var resp = req.response;
+            console.log('Server response:', resp, 'request:', req);
+            document.getElementById('name').textContent = resp.user;
+          }
+        };
+        req.open('GET', '/userinfo', true);
+        req.send();
+      })();
+    </script>
+  </body>
+</html>
