@@ -1,6 +1,6 @@
 # spa-security
 
-Just a playground for SPA authentication.
+Just a playground for SPA authentication prototypes.
 
 ## How to run
 
